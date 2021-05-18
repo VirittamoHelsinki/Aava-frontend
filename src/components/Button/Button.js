@@ -2,6 +2,7 @@ import React from "react";
 import MUIbutton from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { colors } from "@material-ui/core";
+import { AddCircleOutline, Settings, PersonAdd, PlayCircleOutline } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     login: {
@@ -22,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
 
     basic: {
         icons: {
-            add:"",
-            settings:"",
-            addUser:"",
-            addPresentation:""
+            add:AddCircleOutline,
+            settings:Settings,
+            addUser:PersonAdd,
+            addPresentation:PlayCircleOutline
         },
 
         color:"black",
