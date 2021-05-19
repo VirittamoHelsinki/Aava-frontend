@@ -45,12 +45,14 @@ const useStyles = makeStyles((theme) => ({
 
     submit: {
         '&:hover': {
-            // tänne hoveri
+        background:"#233550",
+        color:"white"
         },
         background:"#8EFF8E",
         boxShadow: "2px 2px 0px #000000",
         borderRadius: "5px",
-        margin:"1rem"
+        margin:"1rem",
+        
     },
 
     row: {
