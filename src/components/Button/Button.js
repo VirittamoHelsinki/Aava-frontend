@@ -44,10 +44,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     submit: {
- 
+        background:"#8EFF8E",
+        boxShadow: "2px 2px 0px #000000",
+        borderRadius: "5px",
+        margin:"1rem"
     },
 
     row: {
+        color:"white",
+        margin:"1rem"
 
     }
 }));
@@ -56,7 +61,7 @@ export default
     function Button(props) {
         const classes = useStyles();
         return (
-            <MUIbutton className={classes.login}>
+            <MUIbutton className={classes.submit}>
                 {props.children || 'nappula'}
             </MUIbutton>
         );
