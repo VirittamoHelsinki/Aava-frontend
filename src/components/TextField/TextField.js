@@ -6,8 +6,6 @@ import { colors } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
         basic: {
                 border:"2px solid #000000",
-                width: "426px",
-                height: "178px",
                 margin:"1rem"
                 }
 }));
