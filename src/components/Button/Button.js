@@ -2,7 +2,7 @@ import React from "react";
 import MUIbutton from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { colors } from "@material-ui/core";
-import { AddCircleOutline, Settings, PersonAdd, PlayCircleOutline } from '@material-ui/icons';
+import { AddCircleOutline as AddButton, Settings, PersonAdd, PlayCircleOutline as PresentationAdd } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     login: {
@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
 
     basic: {
         icons: {
-            add:AddCircleOutline,
+            add:AddButton,
             settings:Settings,
             addUser:PersonAdd,
-            addPresentation:PlayCircleOutline
+            addPresentation:PresentationAdd
         },
 
         color:"black",
@@ -45,14 +45,12 @@ const useStyles = makeStyles((theme) => ({
 
     submit: {
         '&:hover': {
-        background:"#233550",
-        color:"white"
+            // tänne hoveri
         },
         background:"#8EFF8E",
         boxShadow: "2px 2px 0px #000000",
         borderRadius: "5px",
-        margin:"1rem",
-        
+        margin:"1rem"
     },
 
     row: {
@@ -66,7 +64,10 @@ export default
     function Button(props) {
         const classes = useStyles();
         return (
-            <MUIbutton className={classes.submit}>
+            <MUIbutton 
+                className={props.className || "none"} 
+                
+            >
                 {props.children || 'nappula'}
             </MUIbutton>
         );
