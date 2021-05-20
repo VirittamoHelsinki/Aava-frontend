@@ -14,6 +14,7 @@ export default
         return (
             <MUIPaper                
                 className={classes} 
+                {...props}  
             >
                 {props.children}
             </MUIPaper>

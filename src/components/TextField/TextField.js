@@ -5,9 +5,9 @@ import { colors } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
         basic: {
-                border:"2px solid #000000",
-                margin:"1rem"
-                }
+            border:"2px solid #000000",
+            margin:"1rem"
+        }
 }));
 
 export default 
