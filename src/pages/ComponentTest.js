@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import Container from '@material-ui/core/Container';
+import { TextField } from '../components/TextField';
 
 export default
     function ComponentTest(props) {
@@ -11,6 +12,7 @@ export default
                 <Button>test</Button>
                 <Button>test</Button>
                 <Button>test</Button>
+                <TextField></TextField>
             </Container>
         )
     }
