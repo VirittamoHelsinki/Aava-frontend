@@ -9,7 +9,7 @@ import { AddCircleOutline as AddButton, Settings, PersonAdd, PlayCircleOutline a
 
 const useStyles = makeStyles((theme) => ({
     root: props => (
-        props.look === 'login' ? {
+        props.look === 'basic' ? {
                 color:"black",
                 textDecoration:"none",
                 fontWeight:"bold",
@@ -20,9 +20,13 @@ const useStyles = makeStyles((theme) => ({
                 paddingBottom:"5px", 
                 borderRadius: "5px",
                 boxShadow: "0px 3px 6px #00000029",
-                margin:"1rem" 
+                margin:"1rem",
+                '&:hover': {
+                    color: "#FFFFFF",
+                    background:"#233550"
+                }
         } :           
-        props.look === 'basic' ? {
+        props.look === 'login' ? {
                 width:"227px",
                 height:"53px",
                 backgroundColor:"#233550",
@@ -41,10 +45,18 @@ const useStyles = makeStyles((theme) => ({
                 boxShadow: "2px 2px 0px #000000",
                 borderRadius: "5px",
                 margin:"1rem",
+                '&:hover': {
+                    color: "#FFFFFF",
+                    background:"#233550"
+                }
         } :          
         props.look === 'row' ? {
-                color:"white",
-                margin:"1rem"
+                color:"#000000",
+                margin:"1rem",
+                '&:hover': {
+                    color: "#FFFFFF",
+                    background:"#233550"
+                }
         } : { /*none*/ }
         )            
     }));
@@ -79,5 +91,5 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-    look: "submit"
+    look: "basic"
 }
