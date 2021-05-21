@@ -20,8 +20,7 @@ export default
                         <TextField label="password" style={TextFieldWidth} />
                     </Grid> 
                     <Grid item xs={12} style={{display:"grid", justifyItems:"center"}}>
-
-                        <Button look="basic">kirjaudu</Button>
+                        <Button look="login">kirjaudu</Button>
                     </Grid>
                 </Grid>
             </Container>

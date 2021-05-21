@@ -8,12 +8,12 @@ import { Paper } from '../components/Paper';
 export default
     function ComponentTest(props) {
         return (
-            <Container>
+            <Container component={Paper}>
                 <h1>Komponenttien testaussivusto</h1>
-                <Paper>
-                <Button look="submit" color="primary">login button</Button>
-                <Button look="basic">basic button</Button>
                 <Button look="submit">submit button</Button>
+                <Button look="basic">basic button</Button>
+                <Button look="row">row button</Button>
+                <Button look="login">login button</Button>
 
                 <Button look="login" icon="AddButton" color="primary">icon button #1</Button>
                 <Button look="basic" icon="Settings">icon button #2</Button>
@@ -21,7 +21,6 @@ export default
                 <Button look="submit" icon="PresentationAdd">icon button #4</Button>
 
                 <Button look="row" disabled>EI KÄYTÖSSÄ</Button>
-                </Paper>
                 <Chip>test</Chip>
                 <TextField></TextField>
             </Container>
