@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import ComponentTest from './pages/ComponentTest';
+import LoginPage from './pages/LoginPage';
 
 import { Box } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -21,6 +22,9 @@ export default function Routes() {
           <Switch>
             <Route exact path="/test">
               {ComponentTest}
+            </Route>
+            <Route exact path="/login">
+              {LoginPage}
             </Route>
             {/* jos sivua ei löydy niin näytä tämä */}
             <Route path="*">
