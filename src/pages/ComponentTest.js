@@ -11,7 +11,7 @@ export default
             <Container>
                 <h1>Komponenttien testaussivusto</h1>
                 <Paper>
-                <Button look="login" color="primary">login button</Button>
+                <Button look="submit" color="primary">login button</Button>
                 <Button look="basic">basic button</Button>
                 <Button look="submit">submit button</Button>
 

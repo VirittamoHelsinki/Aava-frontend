@@ -29,7 +29,12 @@ const useStyles = makeStyles((theme) => ({
                 color:"white",
                 borderRadius:"5px",
                 boxShadow: "0px 3px 6px #00000029",
-                margin:"1rem"
+                margin:"1rem",
+                fontSize: "20px",
+                '&:hover': {
+                    color: "#090909",
+                    background:"#868f9d"
+                }
         } :        
         props.look === 'submit' ? {
                 background:"#8EFF8E",

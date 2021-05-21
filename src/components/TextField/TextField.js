@@ -6,7 +6,7 @@ import { colors } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
         basic: {
             border:"2px solid #000000",
-            margin:"1rem"
+            margin:"1rem 0"
         }
 }));
 
@@ -15,10 +15,14 @@ export default
         const classes = useStyles();
         return (
             <MUItextfield 
-                className={classes.basic} 
-            >
-                {props.children}
-            </MUItextfield>
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                InputProps={{
+                    className: classes.basic
+                }}
+                {...props}  
+            />
         );
 }
 
