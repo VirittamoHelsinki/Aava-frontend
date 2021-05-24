@@ -11,9 +11,10 @@ export default
         const classes = useStyles();
         return (
             <MUIchip 
+            selected
                 // className={classes.submit} 
-            >
-                {props.children || 'chippi'}
-            </MUIchip>
+                label={props.children || 'chippi'}
+                {...props}
+            />
         );
 }
