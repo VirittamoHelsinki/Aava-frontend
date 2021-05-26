@@ -5,7 +5,9 @@ import { Button } from '../components/Button';
 import { TextField } from '../components/TextField';
 import { Chip } from '../components/Chip';
 import { Paper } from '../components/Paper';
-import MenuSide from '../components/MenuSide/MenuSide';
+import { MenuSide } from '../components/MenuSide';
+import { Radio } from '../components/Radio';
+import Typography from '@material-ui/core/Typography';
 
 // COMPONENTS TESTING AREA 
 
@@ -28,13 +30,14 @@ export default
                         <Button look="basic" icon="Settings">icon button #2</Button>
                         <Button look="submit" icon="PersonAdd">icon button #3</Button>
                         <Button look="submit" icon="PresentationAdd">icon button #4</Button>
-
                         <Button look="row" disabled>EI KÄYTÖSSÄ</Button>
                         <Chip>test</Chip><Chip>test</Chip><Chip>test</Chip>
                         <TextField style={{margin:"4px"}} />
                         <TextField placeholder="Teknologian nimi" style={{margin:"4px"}} />
                         <TextField label="password" type="password" style={{margin:"4px"}} />
                         <TextField label="test" placeholder="test holder" style={{margin:"4px"}} />
+                        <a href="#">test</a>
+                        <Radio />
                     </Container>
                 </Grid>
                 <Grid item xs={1} />    

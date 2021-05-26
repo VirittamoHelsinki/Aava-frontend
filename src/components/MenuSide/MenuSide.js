@@ -5,8 +5,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import SlideshowIcon from '@material-ui/icons/Slideshow';
+import GroupIcon from '@material-ui/icons/Group';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,7 +23,12 @@ const useStyles = makeStyles((theme) => ({
             zIndex: "1",
     },
     icon: {
-      minWidth: "2rem"
+      minWidth: "2rem",
+      color: "white",
+      selected: {
+        minWidth: "2rem",
+        color: "white"
+      }
     },
     selected: {
         background: "pink",
@@ -60,20 +67,20 @@ export default
                 <List component="nav" aria-label="main mailbox folders">
                     <img src="img/dt_logo_vaaka.png" style={{display:"grid", justifyItems:"center", margin: "0 auto 3rem", width: "88px", height: "76px"}} />
                     <ListItemStyled button selected>
-                        <ListItemIcon className={classes.icon}> 
-                        <InboxIcon />
+                        <ListItemIcon className={classes.icon.selected}> 
+                        <DashboardIcon />
                         </ListItemIcon>
                         <ListItemText primary="Dashboard" />
                     </ListItemStyled>
                     <ListItem button>
                         <ListItemIcon className={classes.icon}>
-                        <DraftsIcon />
+                        <SlideshowIcon />
                         </ListItemIcon>
                         <ListItemText primary="Katselmukset" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon className={classes.icon}>
-                        <DraftsIcon />
+                        <GroupIcon />
                         </ListItemIcon>
                         <ListItemText primary="Käyttäjänhallinta" />
                     </ListItem>
