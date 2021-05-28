@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { Button } from '../components/Button';
@@ -13,6 +13,10 @@ import Typography from '@material-ui/core/Typography';
 
 export default
     function ComponentTest(props) {
+        const [chipData, setChipData] = useState(0);
+        const handleDelete = (chipToDelete) => () => {
+        //   setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
+        };
         return (
             <Grid container>
                 <Grid item xs={2}>
@@ -31,7 +35,21 @@ export default
                         <Button look="submit" icon="PersonAdd">icon button #3</Button>
                         <Button look="submit" icon="PresentationAdd">icon button #4</Button>
                         <Button look="row" disabled>EI KÄYTÖSSÄ</Button>
-                        <Chip>test</Chip><Chip>test</Chip><Chip>test</Chip>
+                        <Chip>JavaScript</Chip> <Chip>UI/UX</Chip>
+                        <Chip>Node.js</Chip>
+                        <Chip>Angular</Chip>
+                        <Chip>MySQL</Chip>
+                        <Chip>Power Bi</Chip>
+                        <Chip>Wordpress</Chip>
+                        <Chip>Python</Chip>
+                        <Chip>MongoDB</Chip>
+                            {chipData.map((data) => {
+                              return (
+                                  <Chip
+                                    
+                                  >{data.label}</Chip>
+                              );
+                            })}
                         <TextField style={{margin:"4px"}} />
                         <TextField placeholder="Teknologian nimi" style={{margin:"4px"}} />
                         <TextField label="password" type="password" style={{margin:"4px"}} />
