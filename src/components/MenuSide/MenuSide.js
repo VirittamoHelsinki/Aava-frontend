@@ -1,14 +1,14 @@
 import React from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import MUIlistItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import SlideshowIcon from '@material-ui/icons/Slideshow';
 import GroupIcon from '@material-ui/icons/Group';
-
+import LogoutIcon from '@material-ui/icons/ExitToApp';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,34 +25,33 @@ const useStyles = makeStyles((theme) => ({
     icon: {
       minWidth: "2rem",
       color: "white",
-      selected: {
-        minWidth: "2rem",
-        color: "white"
-      }
     },
     selected: {
-        background: "pink",
-        textTransform: 'capitalize',
-        '&:hover': {
-            backgroundColor: "transparent"
-        }
+      minWidth: "2rem",
+      color: "black"
     }
   }));
 
-  const ListItemStyled = withStyles({
+  const ListItem = withStyles({
     root: {
-      background: 'linear-gradient(45deg, #E9E9E9 30%, #F1F1F1 90%)',
+      color: "white"
+    },
+    label: {
+      textTransform: 'capitalize',
+    },
+    selected: {
+      backgroundColor: '#E9E9E9',
       borderRadius: 3,
       border: 0,
       color: '#000000',
       fontWeight: '600',
       height: 48,
       padding: '0 0 0 -10px',
-    },
-    label: {
-      textTransform: 'capitalize',
-    },
-  })(ListItem);
+      '&:hover': {
+        backgroundColor: "#868F9D"
+      }
+    }
+  })(MUIlistItem);
   
   function ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
@@ -64,14 +63,14 @@ export default
         const menuItems = []
         return (
             <div className={classes.root}>
-                <List component="nav" aria-label="main mailbox folders">
+                <List component="nav" aria-label="main dashboard review control">
                     <img src="img/dt_logo_vaaka.png" style={{display:"grid", justifyItems:"center", margin: "0 auto 3rem", width: "88px", height: "76px"}} />
-                    <ListItemStyled button selected>
-                        <ListItemIcon className={classes.icon.selected}> 
+                    <ListItem button selected>
+                        <ListItemIcon className={classes.selected}> 
                         <DashboardIcon />
                         </ListItemIcon>
                         <ListItemText primary="Dashboard" />
-                    </ListItemStyled>
+                    </ListItem>
                     <ListItem button>
                         <ListItemIcon className={classes.icon}>
                         <SlideshowIcon />
@@ -86,8 +85,11 @@ export default
                     </ListItem>
                     </List>
                     <Divider />
-                    <List component="nav" aria-label="secondary mailbox folders">
+                    <List component="nav" aria-label="secondary logout system">
                     <ListItem button>
+                        <ListItemIcon className={classes.icon}>
+                          <LogoutIcon />
+                        </ListItemIcon>
                         <ListItemText primary="Kirjaudu ulos" />
                     </ListItem>
                 </List>
