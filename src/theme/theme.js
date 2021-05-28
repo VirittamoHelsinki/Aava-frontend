@@ -4,10 +4,7 @@ import palette from './palette';
 const theme = createMuiTheme({
   palette: palette,
   typography: {
-    fontFamily: [
-      'Poppins',
-      'sans-serif',
-    ].join(','),
+    fontFamily: "'Poppins','sans-serif'"
   },
   zIndex: {
     appBar: 1200,
