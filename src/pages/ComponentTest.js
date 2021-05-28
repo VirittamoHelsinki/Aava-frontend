@@ -13,10 +13,10 @@ import Typography from '@material-ui/core/Typography';
 
 export default
     function ComponentTest(props) {
-        const [chipData, setChipData] = useState(0);
         const handleDelete = (chipToDelete) => () => {
         //   setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
         };
+        // const [chipData, setChipData] = useState(0);
         return (
             <Grid container>
                 <Grid item xs={2}>
@@ -43,13 +43,13 @@ export default
                         <Chip>Wordpress</Chip>
                         <Chip>Python</Chip>
                         <Chip>MongoDB</Chip>
-                            {chipData.map((data) => {
+                            {/* {chipData.map((data) => {
                               return (
                                   <Chip
                                     
                                   >{data.label}</Chip>
                               );
-                            })}
+                            })} */}
                         <TextField style={{margin:"4px"}} />
                         <TextField placeholder="Teknologian nimi" style={{margin:"4px"}} />
                         <TextField label="password" type="password" style={{margin:"4px"}} />
