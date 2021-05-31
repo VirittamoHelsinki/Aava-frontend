@@ -17,17 +17,22 @@ export default function Routes() {
   return (
     <Router>
         <Suspense fallback={
-          <Box variant="outlined" style={{minHeight:"100vh", display: "grid", placeContent: "center"}}><CircularProgress size="4rem" /></Box>
+          <Box 
+            variant="outlined" 
+            style={{minHeight:"100vh", display: "grid", placeContent: "center"}}
+          >
+              <CircularProgress size="4rem" />
+          </Box>
         }>
           <Switch>
             <Route exact path="/test">
-              {ComponentTest}
+              <ComponentTest />
             </Route>
             <Route exact path="/login">
-              {LoginPage}
+              <LoginPage />
             </Route>
-            {/* jos sivua ei löydy niin näytä tämä */}
             <Route path="*">
+              {/* jos sivua ei löydy niin näytä tämä */}
               {/* <PageNotFound /> */}
             </Route>
 
