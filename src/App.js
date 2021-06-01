@@ -10,9 +10,7 @@ export default
     return (
       <ThemeProvider theme={theme}> 
         <CssBaseline />
-        <Routes 
-          // tarvittavat propsit tähän
-        />
+        <Routes />
       </ThemeProvider>   
     );
   } 
