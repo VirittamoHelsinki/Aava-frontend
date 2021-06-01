@@ -14,9 +14,14 @@ import Typography from '@material-ui/core/Typography';
 export default
     function ComponentTest(props) {
         const handleDelete = (chipToDelete) => () => {
-        //   setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
+          setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
         };
-        // const [chipData, setChipData] = useState(0);
+        const [chipData, setChipData] = useState([
+            {key: 0, label: 'test1'},
+            {key: 1, label: 'test2'},
+            {key: 2, label: 'test3'},
+            {key: 3, label: 'test4'},
+        ]);
         return (
             <Grid container>
                 <Grid item xs={2}>
@@ -43,13 +48,19 @@ export default
                         <Chip>Wordpress</Chip>
                         <Chip>Python</Chip>
                         <Chip>MongoDB</Chip>
-                            {/* {chipData.map((data) => {
-                              return (
-                                  <Chip
-                                    
-                                  >{data.label}</Chip>
-                              );
-                            })} */}
+                            {chipData.map((data) => {
+                                return (
+                                    <React.Fragment 
+                                        key={data.key}
+                                    >
+                                        <Chip
+                                            onDelete={handleDelete(data)}
+                                        >
+                                            {data.label}
+                                        </Chip>
+                                    </React.Fragment>
+                                );
+                            })}
                         <TextField style={{margin:"4px"}} />
                         <TextField placeholder="Teknologian nimi" style={{margin:"4px"}} />
                         <TextField label="password" type="password" style={{margin:"4px"}} />
