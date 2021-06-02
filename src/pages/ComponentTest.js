@@ -32,6 +32,11 @@ export default
             {key: 1, text: 'Katselmukset', link: '/login', icon: <SlideshowIcon />},
             {key: 2, text: 'Käyttäjät', link: '/test2', icon: <GroupIcon />},
         ]);
+        const [listData, setListData] = useState([
+            {key: 0, text: 'Dashboard', value: '/test', disabled: false},
+            {key: 1, text: 'Katselmukset', value: '/login', disabled: false},
+            {key: 2, text: 'Käyttäjät', value: '/test2', disabled: false}
+        ]);
         return (
             <Grid container>
                 <Grid item xs={2}>
@@ -76,7 +81,7 @@ export default
                         <TextField label="password" type="password" style={{margin:"4px"}} />
                         <TextField label="test" placeholder="test holder" style={{margin:"4px"}} />
                         <a href="#">test</a>
-                        <Radio />
+                        <Radio listData={listData} />
                     </Container>
                 </Grid>
                 <Grid item xs={1} />    

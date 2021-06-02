@@ -11,10 +11,21 @@ export default
             <FormControl component="fieldset">
               <FormLabel component="legend">valitse</FormLabel>
               <RadioGroup aria-label="valitse" name="valitse">
-                <FormControlLabel value="vaihtoehto 1" control={<Radio />} label="vaihtoehto 1" />
-                <FormControlLabel value="vaihtoehto 2" control={<Radio />} label="vaihtoehto 2" />
-                <FormControlLabel value="vaihtoehto 3" control={<Radio />} label="vaihtoehto 3" />
-                <FormControlLabel value="disabled" disabled control={<Radio />} label="(Disabled option)" />
+                {props.listData ? 
+                  props.listData.map ((data) => {
+                    return (
+                        <React.Fragment 
+                            key={data.key}
+                        >
+                          <FormControlLabel value={data.value} control={<Radio />} label={data.text} />
+                        </React.Fragment>
+                    );
+                  })
+                  : (
+<> 
+</>
+                  )
+                }
               </RadioGroup>
             </FormControl>
     );
