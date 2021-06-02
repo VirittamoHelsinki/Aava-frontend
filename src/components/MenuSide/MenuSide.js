@@ -5,10 +5,8 @@ import MUIlistItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import SlideshowIcon from '@material-ui/icons/Slideshow';
-import GroupIcon from '@material-ui/icons/Group';
 import LogoutIcon from '@material-ui/icons/ExitToApp';
+import { useLocation } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,42 +54,48 @@ const useStyles = makeStyles((theme) => ({
   function ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
   }
-
+  
 export default
     function MenuSide(props) {
         const classes = useStyles();
+        const location = useLocation();
         const menuItems = []
         return (
             <div className={classes.root}>
                 <List component="nav" aria-label="main dashboard review control">
                     <img src="img/dt_logo_vaaka.png" style={{display:"grid", justifyItems:"center", margin: "0 auto 3rem", width: "88px", height: "76px"}} />
-                    <ListItem button selected>
-                        <ListItemIcon className={classes.selected}> 
-                        <DashboardIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon className={classes.icon}>
-                        <SlideshowIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Katselmukset" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon className={classes.icon}>
-                        <GroupIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Käyttäjänhallinta" />
-                    </ListItem>
-                    </List>
-                    <Divider />
-                    <List component="nav" aria-label="secondary logout system">
-                    <ListItem button>
-                        <ListItemIcon className={classes.icon}>
-                          <LogoutIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Kirjaudu ulos" />
-                    </ListItem>
+                    {props.menuData ? 
+                      props.menuData.map ((data) => {
+                        return (
+                            <React.Fragment 
+                                key={data.key}
+                            >
+                              <ListItem button selected={location.pathname === data.link ? true : false}>
+                                  <ListItemIcon className={location.pathname === data.link ? classes.selected : classes.icon}> 
+                                    {data.icon}
+                                  </ListItemIcon>
+                                  <ListItemLink href={data.link}>
+                                    <ListItemText primary={data.text} />
+                                  </ListItemLink>
+                              </ListItem>
+                            </React.Fragment>
+                        );
+                      })
+                      : (
+                      <ListItem button disabled>
+                        <ListItemText primary="Menu Failed to load" />
+                      </ListItem>
+                      )
+                    }
+                </List>
+                <Divider />
+                <List component="nav" aria-label="secondary logout system">
+                  <ListItem button>
+                      <ListItemIcon className={classes.icon}>
+                        <LogoutIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="Kirjaudu ulos" />
+                  </ListItem>
                 </List>
             </div>
         )

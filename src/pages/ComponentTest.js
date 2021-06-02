@@ -7,6 +7,11 @@ import { Chip } from '../components/Chip';
 import { Paper } from '../components/Paper';
 import { MenuSide } from '../components/MenuSide';
 import { Radio } from '../components/Radio';
+
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import SlideshowIcon from '@material-ui/icons/Slideshow';
+import GroupIcon from '@material-ui/icons/Group';
+
 import Typography from '@material-ui/core/Typography';
 
 // COMPONENTS TESTING AREA 
@@ -22,10 +27,15 @@ export default
             {key: 2, label: 'test3'},
             {key: 3, label: 'test4'},
         ]);
+        const [menuData, setMenuData] = useState([
+            {key: 0, text: 'Dashboard', link: '/test', icon: <DashboardIcon />},
+            {key: 1, text: 'Katselmukset', link: '/login', icon: <SlideshowIcon />},
+            {key: 2, text: 'Käyttäjät', link: '/test2', icon: <GroupIcon />},
+        ]);
         return (
             <Grid container>
                 <Grid item xs={2}>
-                    <MenuSide />
+                    <MenuSide menuData={menuData} />
                 </Grid>
                 <Grid item xs={9} sm={4.5}>
                     <Container component={Paper}>
