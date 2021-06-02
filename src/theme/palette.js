@@ -1,6 +1,15 @@
 import { red, blue, blueGrey, yellow, green } from '@material-ui/core/colors';
 const white = '#FFF';
 const black = '#000';
+const ligtherBlack ="#090909";
+const darkBlue = "#233550";
+const grey ="#E9E9E9";
+const darkerGrey ="#0000004F";
+const lightGreen ="#8EFF8E";
+const deepYellow = "#FFC61E";
+
+
+
 
 export default {
   type: 'light',
