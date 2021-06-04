@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# `Aava frontend`
+Aava is project management tool for Digitalents Helsinki. 
+Project has whole contains two parts, frontend and backend.
+This repository includes only the frontside. And there is separate repository for backend.
+
+# Getting Started 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
