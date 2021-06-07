@@ -10,6 +10,7 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { withTheme } from '@material-ui/core/styles';
 
 
+
 const useStyles = makeStyles({
   root: {
     '&:hover': {
@@ -65,20 +66,31 @@ function StyledRadio(props) {
 
 const RadioButton = withTheme(StyledRadio); 
 
-export default
-  function Select(props) {
 
-  return (
 
-    <FormControl component="fieldset">
-      <FormLabel component="legend">valitse</FormLabel>
-      <RadioGroup aria-label="valitse" name="valitse"  >
-        <FormControlLabel value="vaihtoehto 1" control={<RadioButton />} label="vaihtoehto 1" />
-        <FormControlLabel value="vaihtoehto 2" control={<RadioButton />} label="vaihtoehto 2" />
-        <FormControlLabel value="vaihtoehto 3" control={<RadioButton />} label="vaihtoehto 3" />
-        <FormControlLabel value="disabled" disabled control={<RadioButton />} label="(Disabled option)" />
+export default 
+    function Select(props) {
+        return(
+            <FormControl component="fieldset">
+              <FormLabel component="legend">valitse</FormLabel>
+              <RadioGroup aria-label="valitse" name="valitse">
+                {props.listData ? 
+                  props.listData.map ((data) => {
+                    return (
+                        <React.Fragment 
+                            key={data.key}
+                        >
+                          <FormControlLabel value={data.value} control={<RadioButton />} label={data.text} />
+                        </React.Fragment>
+                    );
+                  })
+                  : (
+<> 
+</>
+                  )
+                }
+              </RadioGroup>
+            </FormControl>
+    );
 
-      </RadioGroup>
-    </FormControl>
-  );
 }
