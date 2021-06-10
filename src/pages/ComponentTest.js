@@ -13,6 +13,8 @@ import SlideshowIcon from '@material-ui/icons/Slideshow';
 import GroupIcon from '@material-ui/icons/Group';
 
 import Typography from '@material-ui/core/Typography';
+import { Table } from '@material-ui/core';
+import { BasicTable } from '../components/Table';
 
 // COMPONENTS TESTING AREA 
 
@@ -82,6 +84,7 @@ export default
                         <TextField label="test" placeholder="test holder" style={{margin:"4px"}} />
                         <a href="#">test</a>
                         <Radio listData={listData} />
+                        <BasicTable></BasicTable>
                     </Container>
                 </Grid>
                 <Grid item xs={1} />    
