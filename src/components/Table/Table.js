@@ -21,10 +21,10 @@ function createData(projektit, status, muokkauspvm, tiimi, näkyvyys) {
 
 const rows = [
     createData('Awesome React app', "käynnissä", "11/06/2021" , "ICT", "true"),
-    createData('Awesome React app', "keskeytynyt","11/06/2021", "Media", "true"),
-    createData('Awesome React app', "käynnissä", "11/06/2021", "Softa", "false" ),
-    createData('Awesome React app', "valmis", "11/06/2021", "Softa", "true" ),
-    createData('Awesome React app', "valmis", "11/06/2021", "Media", "true" ),
+    createData('Awesome React app', "keskeytynyt", "11/06/2021", "Media", "true"),
+    createData('Awesome React app', "käynnissä", "11/06/2021", "Softa", "false"),
+    createData('Awesome React app', "valmis", "11/06/2021", "Softa", "true"),
+    createData('Awesome React app', "valmis", "11/06/2021", "Media", "true"),
 ];
 
 
@@ -52,7 +52,7 @@ export default function BasicTable() {
                                 {row.projektit}
                             </TableCell>
                             <TableCell align="right">{row.status}</TableCell>
-                            <TableCell align="rigth">{row.muokkauspvm}</TableCell>
+                            <TableCell align="right">{row.muokkauspvm}</TableCell>
                             <TableCell align="right">{row.tiimi}</TableCell>
                             <TableCell align="right">{row.näkyvyys}</TableCell>
                         </TableRow>
