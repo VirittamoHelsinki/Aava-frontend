@@ -7,6 +7,7 @@ import {
 
 import ComponentTest from './pages/ComponentTest';
 import LoginPage from './pages/LoginPage';
+import Reviews from './pages/Reviews';
 
 import { Box } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -33,6 +34,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/">
               <LoginPage />
+            </Route>
+            <Route exact path="/reviews">
+              <Reviews />
             </Route>
             <Route path="*">
               {/* jos sivua ei löydy niin näytä tämä */}
