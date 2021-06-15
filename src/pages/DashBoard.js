@@ -28,7 +28,7 @@ export default
         const [data, setData] = useState([]);
         const [status, setStatus] = useState("Idle");
         useEffect(() => {         
-            DataFetch("dashboard", {setData, setStatus});
+            DataFetch("dashboard", {data, setData, setStatus});
         },[]);
         console.log(status)
         return (
@@ -37,8 +37,14 @@ export default
                     <MenuSide menuData={menuData} />
                 </Grid>
                 <Grid item xs={10}>
+                    <div style={{paddingLeft: "12rem", paddingTop: "8.5rem", paddingBottom: "2.5rem"}}>
+                        <Button look="basic" icon="AddButton">Uusi Projekti</Button>
+                        <Button look="basic" icon="Settings" disabled>Projektien asetukset</Button>
+                    </div>
                     <Container component={Paper}>
-                        <BasicTable data={data} setData={setData} />
+                        <Grid item xs={12}><Typography variant="h6" gutterBottom style={{padding: "1rem"}}>Projektit</Typography></Grid>
+                        <Grid container xs={12} justify="flex-end"><TextField /></Grid>
+                        <BasicTable data={data} setData={setData} type="dashboard"/>
                     </Container>
                 </Grid>
 

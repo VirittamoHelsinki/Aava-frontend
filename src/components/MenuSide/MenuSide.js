@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 360,
       color: "white",
       backgroundColor: "#233550",
-      position:"absolute",top: "0",
+      position:"fixed",top: "0",
             left:" 0px",
             width: "198px",
-            height: "100vh",
+            minHeight: "100vh",
             zIndex: "1",
     },
     icon: {
