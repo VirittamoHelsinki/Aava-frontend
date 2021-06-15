@@ -10,7 +10,7 @@ import LoginPage from './pages/LoginPage';
 
 import { Box } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
-// const esimerkki = lazy(() => import('./esimerkki'));
+const DashBoard = lazy(() => import('./pages/DashBoard'));
 
 export default function Routes() {
   
@@ -25,10 +25,13 @@ export default function Routes() {
           </Box>
         }>
           <Switch>
+            <Route exact path="/dashboard">
+              <DashBoard />
+            </Route>
             <Route exact path="/test">
               <ComponentTest />
             </Route>
-            <Route exact path="/login">
+            <Route exact path="/">
               <LoginPage />
             </Route>
             <Route path="*">

@@ -50,6 +50,6 @@ export default
         }
 
         if (login === true) {
-            return <Redirect to="/test" />;
+            return <Redirect to="/dashboard" />;
         }
     }
