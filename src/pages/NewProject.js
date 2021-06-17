@@ -16,6 +16,23 @@ import { BasicTable } from '../components/Table';
 import DataFetch from '../components/DataFetch/DataFetch'
 import { TextField } from '../components/TextField';
 
+function ChipComponent(props) {
+    return (<>
+            {props.data.map((row) => {
+                return (
+                    <React.Fragment 
+                        key={row.id}
+                    >
+                        <Chip>
+                            {row.technology_name}
+                        </Chip>
+                    </React.Fragment>
+                );
+            })
+            }
+    </>)
+}
+
 export default
     function NewProject(props) {
         const [data, setData] = useState([]);
@@ -27,27 +44,17 @@ export default
             {key: 3, text: 'Status', icon: <StatusIcon />, component: <TextField />},
             {key: 4, text: 'Team', icon: <TeamIcon />, component: <TextField />},
             {key: 5, text: 'Tiimit', icon: "", component: <TextField />},
-            {key: 5, text: 'Teknologiat', icon: "", component: (
-                data.map((row) => {
-                    return (
-                        <React.Fragment 
-                            key={row.id}
-                        >
-                            <Chip>
-                                {row.technology_name}
-                            </Chip>
-                        </React.Fragment>
-                    );
-                })
-            )},
-            {key: 5, text: 'Tekijät', icon: "", component: <TextField />},
-            {key: 5, text: 'Kuvaus', icon: "", component: <TextField />},
-            {key: 5, text: 'Linkkejä', icon: "", component: <TextField />},
+            {key: 6, text: 'Teknologiat', icon: "", component:""},
+            {key: 7, text: 'Tekijät', icon: "", component: <TextField />},
+            {key: 8, text: 'Kuvaus', icon: "", component: <TextField />},
+            {key: 9, text: 'Linkkejä', icon: "", component: <TextField />},
           ]);
         const [status, setStatus] = useState("Idle");
         useEffect(() => {         
             DataFetch("technology", {setData, setStatus});
         },[]);
+        
+        console.log(data)
         console.log(status)
         return (
             <Grid container>
@@ -60,7 +67,7 @@ export default
                         <Grid container alignItems="center">
                         {fields.map((row) => {
                             return (
-                                <><Grid item xs={1}>{row.icon}</Grid><Grid item xs={2}><Typography>{row.text}</Typography></Grid><Grid item xs={9}>{row.component}</Grid></>
+                                <><Grid item xs={1}>{row.icon}</Grid><Grid item xs={2}><Typography>{row.text}</Typography></Grid><Grid item xs={9}>{row.component ? row.component : <ChipComponent data={data} /> }</Grid></>
                             )
                         })}
                         </Grid>
