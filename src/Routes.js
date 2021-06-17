@@ -7,11 +7,12 @@ import {
 
 import ComponentTest from './pages/ComponentTest';
 import LoginPage from './pages/LoginPage';
-import Reviews from './pages/Reviews';
 
 import { Box } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 const DashBoard = lazy(() => import('./pages/DashBoard'));
+const Reviews = lazy(() => import('./pages/Reviews'));
+const UserManagement = lazy(() => import('./pages/UserManagement'));
 
 export default function Routes() {
   
@@ -37,6 +38,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/reviews">
               <Reviews />
+            </Route>
+            <Route exact path="/usermanagement">
+              <UserManagement />
             </Route>
             <Route path="*">
               {/* jos sivua ei löydy niin näytä tämä */}
