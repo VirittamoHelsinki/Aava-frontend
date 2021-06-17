@@ -23,9 +23,11 @@ export default function BasicTable(props) {
         }[code]
     }
     function checkVisibility(visible) {
-        return {
-            false: <VisibilityOff />, true: <Visibility />
-        }[visible]
+        if (visible === true) {
+            return <Visibility />;
+        } else {
+            return <VisibilityOff />;
+        }
     }
     return (
         <TableContainer>
