@@ -4,27 +4,14 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { Button } from '../components/Button';
 import { TextField } from '../components/TextField';
-import { Chip } from '../components/Chip';
 import { Paper } from '../components/Paper';
-import { Radio } from '../components/Radio';
-
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import SlideshowIcon from '@material-ui/icons/Slideshow';
-import GroupIcon from '@material-ui/icons/Group';
 
 import Typography from '@material-ui/core/Typography';
-import { Table } from '@material-ui/core';
 import { BasicTable } from '../components/Table';
-import { DateRange } from '@material-ui/icons';
 import DataFetch from '../components/DataFetch/DataFetch'
 
 export default
     function DashBoard(props) {
-        const [menuData, setMenuData] = useState([
-            {key: 0, text: 'Dashboard', link: '/dashboard', icon: <DashboardIcon />},
-            {key: 1, text: 'Katselmukset', link: '/reviews', icon: <SlideshowIcon />},
-            {key: 2, text: 'Käyttäjät', link: '/usermanagement', icon: <GroupIcon />},
-        ]);
         const [data, setData] = useState([]);
         const [status, setStatus] = useState("Idle");
         useEffect(() => {         
@@ -34,11 +21,11 @@ export default
         return (
             <Grid container>
                 <Grid item xs={2}>
-                    <MenuSide menuData={menuData} />
+                    <MenuSide menuData={props.menuData} />
                 </Grid>
                 <Grid item xs={10}>
                     <div style={{paddingLeft: "12rem", paddingTop: "8.5rem", paddingBottom: "2.5rem"}}>
-                        <Button look="basic" icon="AddButton">Uusi Projekti</Button>
+                        <Button look="basic" icon="AddButton" component="a" href="/new-project">Uusi Projekti</Button>
                         <Button look="basic" icon="Settings" disabled>Projektien asetukset</Button>
                     </div>
                     <Container component={Paper}>
