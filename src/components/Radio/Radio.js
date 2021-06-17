@@ -72,9 +72,8 @@ export default
     function Select(props) {
         return(
             <FormControl component="fieldset">
-              <FormLabel component="legend">valitse</FormLabel>
               <RadioGroup aria-label="valitse" name="valitse">
-                {props.listData ? 
+                {props.listData && 
                   props.listData.map ((data) => {
                     return (
                         <React.Fragment 
@@ -84,10 +83,6 @@ export default
                         </React.Fragment>
                     );
                   })
-                  : (
-<> 
-</>
-                  )
                 }
               </RadioGroup>
             </FormControl>

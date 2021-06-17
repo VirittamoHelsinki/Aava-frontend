@@ -4,17 +4,22 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { Paper } from '../components/Paper';
-import { Button } from '../components/Button';
+import { Radio } from '../components/Radio';
 import { Chip } from '../components/Chip';
 import NameIcon from '@material-ui/icons/Apps';
 import StartIcon from '@material-ui/icons/Today';
 import EndIcon from '@material-ui/icons/EventAvailable';
 import StatusIcon from '@material-ui/icons/BlurCircular';
 import TeamIcon from '@material-ui/icons/PeopleAlt';
+import TechIcon from '@material-ui/icons/Build';
+import DescriptionIcon from '@material-ui/icons/Description';
+import LinkIcon from '@material-ui/icons/Link';
 
 import { BasicTable } from '../components/Table';
+import { Select } from '../components/Select';
 import DataFetch from '../components/DataFetch/DataFetch'
 import { TextField } from '../components/TextField';
+import { Button } from '../components/Button';
 
 function ChipComponent(props) {
     return (<>
@@ -36,18 +41,27 @@ function ChipComponent(props) {
 export default
     function NewProject(props) {
         const [data, setData] = useState([]);
+        const [listData, setListData] = useState([
+          {key: 0, text: 'SoftDev', value: '/test', disabled: false},
+          {key: 1, text: 'ICT', value: '/login', disabled: false},
+          {key: 2, text: 'Media', value: '/test2', disabled: false}
+        ]);
+        const [selectData, setSelectData] = useState([
+            {key: 0, text: 'Aloitettu', value: '/test', disabled: false},
+            {key: 1, text: 'Kesken', value: '/login', disabled: false},
+            {key: 2, text: 'Valmis', value: '/test2', disabled: false}
+        ]);
 
         const [fields, addFields] = useState([
             {key: 0, text: 'Nimi', icon: <NameIcon />, component: <TextField />},
             {key: 1, text: 'Aloituspäivämäärä', icon: <StartIcon />, component: <TextField />},
             {key: 2, text: 'Lopetuspäivämäärä', icon: <EndIcon />, component: <TextField />},
-            {key: 3, text: 'Status', icon: <StatusIcon />, component: <TextField />},
-            {key: 4, text: 'Team', icon: <TeamIcon />, component: <TextField />},
-            {key: 5, text: 'Tiimit', icon: "", component: <TextField />},
-            {key: 6, text: 'Teknologiat', icon: "", component:""},
-            {key: 7, text: 'Tekijät', icon: "", component: <TextField />},
-            {key: 8, text: 'Kuvaus', icon: "", component: <TextField />},
-            {key: 9, text: 'Linkkejä', icon: "", component: <TextField />},
+            {key: 3, text: 'Status', icon: <StatusIcon />, component: <Select selectData={selectData} />},
+            {key: 4, text: 'Tiimit', icon: <TeamIcon />, component: <Radio listData={listData} />},
+            {key: 5, text: 'Teknologiat', icon: <TechIcon />, component:""},
+            {key: 6, text: 'Tekijät', icon: <TeamIcon />, component: <TextField />},
+            {key: 7, text: 'Kuvaus', icon: <DescriptionIcon />, component: <TextField multiline={true} rows={4}/>},
+            {key: 8, text: 'Linkkejä', icon: <LinkIcon />, component: <TextField />},
           ]);
         const [status, setStatus] = useState("Idle");
         useEffect(() => {         
@@ -71,6 +85,7 @@ export default
                             )
                         })}
                         </Grid>
+                        <Grid container xs={12} justify="flex-end"><Button >Hylkää</Button><Button look="submit">Syötä</Button></Grid>
                     </Container>
                 </Grid>
 
