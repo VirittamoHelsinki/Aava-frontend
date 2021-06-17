@@ -5,7 +5,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
-import { Visibility, VisibilityOff }from '@material-ui/icons';
+import { VisibilityOutlined as Visibility, VisibilityOffOutlined as VisibilityOff }from '@material-ui/icons';
 import Button from '../Button/Button';
 
 const useStyles = makeStyles({
