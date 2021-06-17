@@ -23,7 +23,7 @@ export default
         const [menuData, setMenuData] = useState([
             {key: 0, text: 'Dashboard', link: '/dashboard', icon: <DashboardIcon />},
             {key: 1, text: 'Katselmukset', link: '/reviews', icon: <SlideshowIcon />},
-            {key: 2, text: 'Käyttäjät', link: '/users', icon: <GroupIcon />},
+            {key: 2, text: 'Käyttäjät', link: '/usermanagement', icon: <GroupIcon />},
         ]);
         const [data, setData] = useState([]);
         const [status, setStatus] = useState("Idle");
