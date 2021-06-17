@@ -6,6 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import { Visibility, VisibilityOff }from '@material-ui/icons';
+import Button from '../Button/Button';
 
 const useStyles = makeStyles({
     table: {
@@ -35,13 +36,14 @@ export default function BasicTable(props) {
                             {row.project_name && 
                                 <TableCell component="th" scope="row">{row.project_name}</TableCell>}
                             {row.status && <TableCell align="right">{checkCodeName(row.status)}</TableCell>}
-                            {row.user.first_name && <TableCell align="left">{row.user.first_name}{row.user.last_name}</TableCell>}
+                            {row.user && <TableCell align="left">{row.user.first_name}{row.user.last_name}</TableCell>}
                             {row.modified && <TableCell align="right">{row.modified}</TableCell>}
                             {row.team && <TableCell align="left">{checkCodeName(row.team)}</TableCell>}
                             {row.visible && <TableCell align="right">{checkVisibility(row.visible)}</TableCell>}
+                            {row.user && <TableCell align="right"><Button look="row" icon="EditUserPriviledges">Muokkaa oikeuksia</Button></TableCell>}
                         </TableRow>
                     ))}
-                </TableBody>
+                </TableBody> 
             </Table>
         </TableContainer>
     );
