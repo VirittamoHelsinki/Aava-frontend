@@ -5,7 +5,8 @@ import clsx from 'clsx';
 import MUIbutton from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { colors } from "@material-ui/core";
-import { AddCircleOutline as AddButton, Settings, PersonAdd, PlayCircleOutline as PresentationAdd, BorderColor as EditUserPriviledges} from '@material-ui/icons';
+import { AddCircleOutline as AddButton, Settings, PersonAdd, PlayCircleOutline as PresentationAdd, BorderColor as EditUserPriviledge,
+        Pageview as PreviewProject, OpenInNew as ExportProject, Delete} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     root: props => (
@@ -73,8 +74,14 @@ function Button(props) {
                         <Settings /> :
                     props.icon === 'PersonAdd' ?
                         <PersonAdd /> :
-                    props.icon === 'EditUserPriviledges' ?
-                        <EditUserPriviledges /> :
+                    props.icon === 'EditUserPriviledge' ?
+                        <EditUserPriviledge /> :
+                    props.icon === 'PreviewProject' ?
+                        <PreviewProject /> :
+                    props.icon === 'Delete' ?
+                        <Delete /> :
+                    props.icon === 'ExportProject' ?
+                        <ExportProject /> :
                     props.icon === 'PresentationAdd' ?
                         <PresentationAdd /> :
                     ""
