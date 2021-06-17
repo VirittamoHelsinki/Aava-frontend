@@ -28,13 +28,13 @@ export default
             {key: 4, text: 'Team', icon: <TeamIcon />, component: <TextField />},
             {key: 5, text: 'Tiimit', icon: "", component: <TextField />},
             {key: 5, text: 'Teknologiat', icon: "", component: (
-                data.map((data) => {
+                data.map((row) => {
                     return (
                         <React.Fragment 
-                            key={data.id}
+                            key={row.id}
                         >
                             <Chip>
-                                {data.technology_name}
+                                {row.technology_name}
                             </Chip>
                         </React.Fragment>
                     );
