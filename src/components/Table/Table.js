@@ -40,12 +40,12 @@ export default function BasicTable(props) {
                             {row.modified && <TableCell align="right">{row.modified}</TableCell>}
                             {row.team && <TableCell align="left">{checkCodeName(row.team)}</TableCell>}
                             {row.visible && <TableCell align="right">{checkVisibility(row.visible)}</TableCell>}
-                            {row.user && <TableCell align="right"><Button look="row" icon="EditUserPriviledges">Muokkaa oikeuksia</Button></TableCell>}
+                            {row.user && <TableCell align="right"><Button look="row" icon="EditUserPriviledge">Muokkaa oikeuksia</Button></TableCell>}
                             {(row.project_name && !row.visible) && 
                                 <>
                                     <TableCell align="right"><Button look="row" icon="PreviewProject">Näytä</Button></TableCell>
                                     <TableCell align="right"><Button look="row" icon="ExportProject">Vie</Button></TableCell>
-                                    <TableCell align="right"><Button look="row" icon="EditUserPriviledges">Muokkaa</Button></TableCell>
+                                    <TableCell align="right"><Button look="row" icon="EditUserPriviledge">Muokkaa</Button></TableCell>
                                     <TableCell align="right"><Button look="row" icon="Delete">Poista</Button></TableCell>
                                 </>
                             }
