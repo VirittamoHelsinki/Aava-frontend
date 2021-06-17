@@ -28,7 +28,7 @@ function ChipComponent(props) {
                     <React.Fragment 
                         key={row.id}
                     >
-                        <Chip>
+                        <Chip clickable>
                             {row.technology_name}
                         </Chip>
                     </React.Fragment>
@@ -78,10 +78,10 @@ export default
                 <Grid item xs={10}>
                     <Container component={Paper}>
                         <Grid item xs={12}><Typography variant="h6" gutterBottom style={{padding: "1rem"}}>Luo uusi projekti</Typography></Grid>
-                        <Grid container alignItems="center">
+                        <Grid container alignItems="center" spacing={2}>
                         {fields.map((row) => {
                             return (
-                                <><Grid item xs={1}>{row.icon}</Grid><Grid item xs={2}><Typography>{row.text}</Typography></Grid><Grid item xs={9}>{row.component ? row.component : <ChipComponent data={data} /> }</Grid></>
+                                <><Grid item xs={1}>{row.icon}</Grid><Grid item xs={2}><Typography>{row.text}</Typography></Grid><Grid item xs={5}>{row.component ? row.component : <ChipComponent data={data} /> }</Grid><Grid item xs={4}></Grid></>
                             )
                         })}
                         </Grid>

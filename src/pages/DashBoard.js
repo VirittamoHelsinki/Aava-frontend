@@ -30,7 +30,6 @@ export default
                     </div>
                     <Container component={Paper}>
                         <Grid item xs={12}><Typography variant="h6" gutterBottom style={{padding: "1rem"}}>Projektit</Typography></Grid>
-                        <Grid container xs={12} justify="flex-end"><TextField /></Grid>
                         <BasicTable data={data} setData={setData} type="dashboard"/>
                     </Container>
                 </Grid>

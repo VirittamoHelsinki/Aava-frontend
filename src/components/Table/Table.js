@@ -13,6 +13,14 @@ const useStyles = makeStyles({
         minWidth: 650,
     },
 });
+let sett = new Intl.DateTimeFormat("fi" , {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  });
+function setDate(date) {
+    return new Date(date);
+}
 
 export default function BasicTable(props) {
     const classes = useStyles();
@@ -35,11 +43,11 @@ export default function BasicTable(props) {
                         <TableRow key={row.id}>
                             {row.project_name && 
                                 <TableCell component="th" scope="row">{row.project_name}</TableCell>}
-                            {row.status && <TableCell align="right">{checkCodeName(row.status)}</TableCell>}
+                            {row.status && <TableCell align="center">{checkCodeName(row.status)}</TableCell>}
                             {row.user && <TableCell align="left">{row.user.first_name}{row.user.last_name}</TableCell>}
-                            {row.modified && <TableCell align="right">{row.modified}</TableCell>}
-                            {row.team && <TableCell align="left">{checkCodeName(row.team)}</TableCell>}
-                            {row.visible && <TableCell align="right">{checkVisibility(row.visible)}</TableCell>}
+                            {row.modified && <TableCell align="center">{sett.format(setDate(row.modified))}</TableCell>}
+                            {row.team && <TableCell align="center">{checkCodeName(row.team)}</TableCell>}
+                            {row.visible && <TableCell align="center">{checkVisibility(row.visible)}</TableCell>}
                             {row.user && <TableCell align="right"><Button look="row" icon="EditUserPriviledge">Muokkaa oikeuksia</Button></TableCell>}
                             {(row.project_name && !row.visible && !row.modified) && 
                                 <>

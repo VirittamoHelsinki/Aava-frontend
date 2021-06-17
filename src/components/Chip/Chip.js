@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "12px",
         backgroundColor: "#E9E9E9",
         font: "normal normal 600 12px/11px Poppins",
-        width: "9.5%",
         height: "17px",
         placeItems: "center"
     },
