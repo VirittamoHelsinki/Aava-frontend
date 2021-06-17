@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
         } :          
         props.look === 'row' ? {
                 color:"#000000",
-                margin:"1rem",
                 '&:hover': {
                     color: "#FFFFFF",
                     background:"#233550"
