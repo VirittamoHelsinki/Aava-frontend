@@ -9,7 +9,7 @@
 
 export default
     async function DataFetch(url, {setData, setStatus}) {
-        const baseUrl = "127.0.0.1:8000";
+        const baseUrl = "http://localhost:8000";
 
         // checks out if url parameter matches to anything and outputs it
         function getParameterFetch(fetchaddress) {
