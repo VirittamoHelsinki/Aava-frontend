@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { Paper } from '../components/Paper';
 import { Button } from '../components/Button';
-
+import AddUserDiag from '../dialog/AddUser'
 import { BasicTable } from '../components/Table';
 import DataFetch from '../components/DataFetch/DataFetch'
 
@@ -17,6 +17,15 @@ export default
             DataFetch("usermanagement", {setData, setStatus});
         },[]);
         console.log(status)
+
+        const [open, setOpen] = useState(false);
+        const handleClose = () => {
+            setOpen(false);
+        };
+  
+        const handleClickOpen = () => {
+            setOpen(true);
+        };
         return (
             <Grid container>
                 <Grid item xs={2}>
@@ -24,7 +33,8 @@ export default
                 </Grid>
                 <Grid item xs={10}>
                     <div style={{paddingLeft: "12rem", paddingTop: "8.5rem", paddingBottom: "2.5rem"}}>
-                        <Button look="basic" icon="PersonAdd">Lisää käyttäjä</Button>
+                        <Button look="basic" icon="PersonAdd" onClick={handleClickOpen}>Lisää käyttäjä</Button>
+                        <AddUserDiag handleClickOpen={handleClickOpen} open={open} handleClose={handleClose} />
                     </div>
                     <Container component={Paper}>
                         <Grid item xs={12}><Typography variant="h6" gutterBottom style={{padding: "1rem"}}>Käyttäjähallinta</Typography></Grid>
