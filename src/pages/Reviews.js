@@ -14,7 +14,13 @@ export default
         const [data, setData] = useState([]);
         const [status, setStatus] = useState("Idle");
         useEffect(() => {         
-            DataFetch("presentation", {setData, setStatus});
+            const showData = DataFetch("presentation", {setStatus});
+            showData.then( resolved => {
+                setData(resolved.resultsData);
+                setStatus(resolved.setStatus)
+              }, e => {
+                throw new Error(e);
+            });
         },[]);
         console.log(status)
         return (
