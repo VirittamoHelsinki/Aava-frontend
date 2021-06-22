@@ -15,9 +15,15 @@ export default
         const [data, setData] = useState([]);
         const [status, setStatus] = useState("Idle");
         useEffect(() => {         
-            DataFetch("dashboard", {data, setData, setStatus});
+            const showData = DataFetch("dashboard", {setStatus});
+            showData.then( resolved => {
+                setData(resolved.resultsData);
+                setStatus(resolved.setStatus)
+              }, e => {
+                throw new Error(e);
+            });
         },[]);
-        console.log(status)
+        console.log(data)
         return (
             <Grid container>
                 <Grid item xs={2}>
