@@ -1,3 +1,4 @@
+/** Routes for Aava */
 import React, { lazy, Suspense, useState } from 'react';
 import {
     BrowserRouter as Router,
