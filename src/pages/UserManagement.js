@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, {useEffect, useState} from 'react';
 import { MenuSide } from '../components/MenuSide';
 import Container from '@material-ui/core/Container';
@@ -8,6 +10,7 @@ import { Button } from '../components/Button';
 import AddUserDiag from '../dialog/AddUser'
 import { BasicTable } from '../components/Table';
 import DataFetch from '../components/DataFetch/DataFetch'
+
 
 export default
     function Reviews(props) {

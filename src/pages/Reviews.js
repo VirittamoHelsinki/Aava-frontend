@@ -9,6 +9,8 @@ import { Button } from '../components/Button';
 import { BasicTable } from '../components/Table';
 import DataFetch from '../components/DataFetch/DataFetch'
 
+// @ts-check
+
 export default
     function Reviews(props) {
         const [data, setData] = useState([]);

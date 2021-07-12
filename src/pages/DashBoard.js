@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { BasicTable } from '../components/Table';
 import DataFetch from '../components/DataFetch/DataFetch'
 
+// @ts-check
+
 export default
     function DashBoard(props) {
         const [data, setData] = useState([]);

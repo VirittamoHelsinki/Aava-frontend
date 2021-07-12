@@ -21,6 +21,8 @@ import DataFetch from '../components/DataFetch/DataFetch'
 import { TextField } from '../components/TextField';
 import { Button } from '../components/Button';
 
+// @ts-check
+
 function ChipComponent(props) {
     return (<>
             {props.data.map((row) => {

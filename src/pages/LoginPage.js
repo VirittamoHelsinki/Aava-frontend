@@ -6,6 +6,8 @@ import { Button } from '../components/Button';
 import { TextField } from '../components/TextField';
 import { Paper } from '../components/Paper';
 
+// @ts-check
+
 export default
     function LoginPage(props) {
         const TextFieldWidth = {width: '400px'}
