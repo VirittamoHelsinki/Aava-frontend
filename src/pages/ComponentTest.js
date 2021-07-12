@@ -16,8 +16,6 @@ import Typography from '@material-ui/core/Typography';
 import { Table } from '@material-ui/core';
 import { BasicTable } from '../components/Table';
 
-// COMPONENTS TESTING AREA 
-
 export default
     function ComponentTest(props) {
         const handleDelete = (chipToDelete) => () => {
