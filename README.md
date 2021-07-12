@@ -3,6 +3,10 @@ Aava is project management tool for Digitalents Helsinki.
 Project has whole contains two parts, frontend and backend.
 This repository includes only the frontside. And there is separate repository for backend.
 
+# Roadmap
+The actual roadmap can be found from root folder named as ROADMAP.md.
+
+
 # Getting Started 
 Before starting it's good to have latest version of node.js and npm installed.
 
@@ -17,6 +21,12 @@ Before starting it's good to have latest version of node.js and npm installed.
 ## API endpoint configuration
 connect backend's url in the following file:
 `/components/DataFetch/DataFetch.config.js`
+
+## Generate docs
+
+### `npm docs`
+
+This will generate the docs in to folder `/docs`. 
 
 ## How to run the project
 
