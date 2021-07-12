@@ -1,6 +1,7 @@
-/*
-*
+/**
+* 
 * Function hook that returns fetched data
+* @component
 * @author   Sanjiv Rana
 * @param    {string} url    basic parameter for url checker 
 * @param    {props} setStatus   setter variable for useState, to get fetching status
@@ -8,6 +9,9 @@
 *           {promise} else  just send status that something is wrong.
 *
 */
+
+// @ts-check
+
 import { config } from './DataFetch.config';
 import getParameterFetch from './ParameterFetch';
 

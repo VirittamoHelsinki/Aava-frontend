@@ -1,4 +1,4 @@
-/* 
+/** 
 *
 * Checks the param and if it matches then returns it.
 * @param {string} fetchaddress    parameter for checking.
