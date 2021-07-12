@@ -10,6 +10,13 @@ import Grid from '@material-ui/core/Grid';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
+/**
+ *
+ * TODO:
+ * Add more input fields according to the usestate postData, setPostData useState object values. 
+ * Check with backend which "POST" and "GET" values should be shown here.
+ */
+
 export default 
     function AddUserDiag(props) {
       const [listData, setListData] = useState([
@@ -17,15 +24,43 @@ export default
           {key: 1, text: 'Luku', value: '2', disabled: false},
           {key: 2, text: 'Kirjoitus', value: '3', disabled: false}
       ]);
+      const [postData, setPostData] = useState(
+        {"username": "", "first_name": "", "last_name": "", "email": "", "is_staff": "", "is_active": "", "is_superuser": ""}
+      )
+      const multiHandler = (event) => {
+        setPostData(prevState => ({
+          ...prevState,
+          [event.target.id]: event.target.value
+        }))
+      }
         return (
           <>
             <Dialog open={props.open} onClose={props.handleClose} aria-labelledby="form-dialog-title">
-              <DialogTitle>Lisää Käyttäjä</DialogTitle>
+              <DialogTitle>Lisää Käyttäjä {!postData.first_name ? "" : postData.first_name }</DialogTitle>
               <DialogContent>
                 <TextField
+                  id="first_name" 
                   autoFocus
                   label="Nimi"
                   fullWidth
+                  value=""
+                  onChange={multiHandler}
+                />
+                <TextField
+                  id="last_name"
+                  autoFocus
+                  label="Sukunimi"
+                  fullWidth
+                  value=""
+                  onChange={multiHandler}
+                />
+                <TextField
+                  id="username"
+                  autoFocus
+                  label="Nimimerkki"
+                  fullWidth
+                  value=""
+                  onChange={multiHandler}
                 />
                 <Radio listData={listData} />
                 <Grid container spacing={1.5} alignItems="center">
