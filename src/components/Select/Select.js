@@ -1,5 +1,5 @@
 import React from "react";
-import MUIselect from '@material-ui/core/select';
+import MUIselect from '@material-ui/core/Select';
 import {FormControl, InputLabel} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { colors } from "@material-ui/core";
